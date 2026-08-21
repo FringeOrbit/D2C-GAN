@@ -38,9 +38,9 @@ models/
   generator.py              # 序列生成器和频域特征模块
   discriminator.py          # 结构流/纹理流 PatchGAN 判别器
 training/
-  cgan.py                   # 数据集封装、损失和训练循环
+  train_d2cgan.py           # 数据集封装、损失和训练循环
 config.py                   # 协方差版本模型和训练设置
-evaluate_paper_style.py     # 论文风格 RMSE/R² 评价脚本
+evaluate_d2cgan.py         # 论文风格 RMSE/R² 评价脚本
 results/
   figures/                  # 论文图件和精简图源数据
   metrics/                  # 汇总指标和 bootstrap 文件
@@ -79,7 +79,7 @@ data/
 准备好本地数据和标准化文件后，执行：
 
 ```bash
-python training/cgan.py
+python training/train_d2cgan.py
 ```
 
 训练脚本会构造按井组织的数据集，实例化生成器和 Patch Hybrid Sequence Discriminator，计算验证集重建损失，并在启用早停时保存验证表现最好的生成器权重。
@@ -88,10 +88,10 @@ python training/cgan.py
 
 ## 模型评价
 
-`evaluate_paper_style.py` 会加载生成器权重和标准化器，在 20%、40%、60% 和 80% 缺失率下评价四条目标曲线。脚本输出每条曲线的 RMSE 和 R²，并可以生成深度曲线可视化。将权重和标准化器放到 `config.py` 指定的位置后执行：
+`evaluate_d2cgan.py` 会加载生成器权重和标准化器，在 20%、40%、60% 和 80% 缺失率下评价四条目标曲线。脚本输出每条曲线的 RMSE 和 R²，并可以生成深度曲线可视化。将权重和标准化器放到 `config.py` 指定的位置后执行：
 
 ```bash
-python evaluate_paper_style.py
+python evaluate_d2cgan.py
 ```
 
 论文中报告的评价指标包括 RMSE、MAE、R² 和 PCC。`results/` 目录保存了论文级汇总结果、图表源数据和外部井级指标。

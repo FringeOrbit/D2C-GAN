@@ -40,9 +40,9 @@ The existing saved test predictions and ground-truth arrays were reused. No mode
 - `figures/crossplot_rhob_nphi_pooled.{png,pdf,svg,tiff}`
 - `figures/covariance_matrix_pooled.{png,pdf,svg,tiff}`
 - `figures/psd_multi_baseline_pooled.{png,pdf,svg,tiff}`
-- `figures/figure5_well_joint_statistics.csv`
-- `figures/figure6_well_covariance_statistics.csv`
-- `figures/figure7_psd_summary.csv`
+- `figures/figure_05_well_joint_statistics.csv`
+- `figures/figure_06_well_covariance_statistics.csv`
+- `figures/figure_07_psd_summary.csv`
 - `figures/redraw_figures_5_6_pooled.py`
 
 The figure source and vector exports use editable text, and the raster exports use 600 dpi. The figures distinguish pooled cell-level diagnostics from well-level uncertainty summaries.

@@ -13,3 +13,4 @@ raw_data/
 predictions/
 *.csv.tmp
 .DS_Store
+.idea/

@@ -1,4 +1,4 @@
-# evaluate_paper_style.py 修复版本
+# evaluate_d2cgan.py
 
 import os
 import sys
@@ -397,7 +397,7 @@ class PaperStyleEvaluator:
         plt.tight_layout()
 
         # 保存图片
-        file_name = f"Fig13_R2_Trend_Epoch_{current_epoch}.png" if current_epoch else "Fig13_R2_Trend.png"
+        file_name = f"evaluation_r2_trend_epoch_{current_epoch}.png" if current_epoch else "evaluation_r2_trend.png"
         save_path = os.path.join(self.config.result_dir, file_name)
         os.makedirs(self.config.result_dir, exist_ok=True)
         plt.savefig(save_path, dpi=200, bbox_inches='tight')

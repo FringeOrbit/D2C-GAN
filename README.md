@@ -59,9 +59,9 @@ models/
   generator.py              # sequence and frequency-aware generator blocks
   discriminator.py          # structure/texture PatchGAN discriminator
 training/
-  cgan.py                   # dataset wrapper, losses and training loop
+  train_d2cgan.py           # dataset wrapper, losses and training loop
 config.py                   # covariance-version model and training settings
-evaluate_paper_style.py     # paper-style RMSE/R² evaluation helper
+evaluate_d2cgan.py         # paper-style RMSE/R² evaluation helper
 results/
   figures/                  # manuscript figures and compact figure data
   metrics/                  # summary metrics and bootstrap files
@@ -107,7 +107,7 @@ window and the four target curves listed above.
 After preparing the local data and standardisation file, run:
 
 ```bash
-python training/cgan.py
+python training/train_d2cgan.py
 ```
 
 The training script constructs the well-level datasets, creates the generator
@@ -121,14 +121,14 @@ switches used for component-wise experiments.
 
 ## Evaluation
 
-`evaluate_paper_style.py` loads a generator checkpoint and a fitted scaler,
+`evaluate_d2cgan.py` loads a generator checkpoint and a fitted scaler,
 then evaluates the four target curves at 20%, 40%, 60% and 80% missing rates.
 The helper reports per-curve RMSE and R² values and can generate depth-curve
 visualisations. Run it after placing the checkpoint and scaler at the paths
 specified in `config.py`:
 
 ```bash
-python evaluate_paper_style.py
+python evaluate_d2cgan.py
 ```
 
 The manuscript reports RMSE, MAE, R² and PCC. The compact result files under

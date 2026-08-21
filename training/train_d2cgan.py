@@ -13,7 +13,7 @@ import joblib
 from config import OptimizedConfig
 import joblib
 # 👇 新增这一行：导入你刚才改好的可视化评估类
-from evaluate_paper_style import PaperStyleEvaluator
+from evaluate_d2cgan import PaperStyleEvaluator
 from config import OptimizedConfig
 import random
 

@@ -22,7 +22,7 @@ seed: 20260806
 - Common four-curve target cells for covariance matrices: 38,075.
 - Covariance matrices are computed in standardized model space, matching the scale of the covariance regularizer.
 - Absolute covariance-difference Frobenius norm: 0.0105767 (displayed as 0.011).
-- Source files: `figure5_crossplot_pooled.npz`, `figure5_covariance_ground_truth.csv`, `figure5_covariance_d2cgan.csv`, `figure5_covariance_absolute_difference.csv`.
+- Source files: `figure_05_crossplot_pooled.npz`, `figure_05_covariance_ground_truth.csv`, `figure_05_covariance_d2cgan.csv`, `figure_05_covariance_absolute_difference.csv`.
 - The joint-distribution plot and covariance matrix are exported as separate figure assets because they require different aspect ratios and visual scales.
 
 ## Figure 6
@@ -31,7 +31,7 @@ seed: 20260806
 - Each window is reconstructed by retaining observed native-valid values and replacing only artificial targets with the model prediction.
 - PSDs are area-normalized per window. Curves and bands use the geometric mean and +/-1 standard deviation in log-PSD across windows, which is appropriate for the logarithmic ordinate.
 - Valid windows: GR 1,917; RHOB 1,772; NPHI 1,251; DTC 1,632.
-- Source file: `figure6_psd_summary.csv`.
+- Source file: `figure_06_psd_summary.csv`.
 
 ## Outputs
 

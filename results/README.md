@@ -15,10 +15,10 @@ The principal manuscript mappings are:
 
 | Manuscript item | Repository location |
 | --- | --- |
-| Figs. 1--7 | `figures/` |
-| Covariance and PSD diagnostics | `figures/figure5_*`, `figures/figure6_*`, `figures/figure7_*` |
+| Figs. 1--7 | `figures/figure_01_*` through `figures/figure_07_*` |
+| Covariance and PSD diagnostics | `figures/figure_05_*`, `figures/figure_06_*`, `figures/figure_07_*` |
 | External Espírito Santo evaluation | `external_validation/` |
-| Well-level bootstrap summary | `metrics/R2-M3_external_well_level_bootstrap.*` |
+| Well-level bootstrap summary | `metrics/external_well_level_bootstrap.*` |
 | Figure-generation and diagnostic records | `logs/` |
 
 The comparison tables in the manuscript report baseline results, but baseline
