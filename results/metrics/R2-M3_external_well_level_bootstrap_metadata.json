@@ -1,0 +1,26 @@
+{
+  "statistical_unit": "well",
+  "summary": "Unweighted well-level means plus well-cluster percentile bootstrap 95% confidence intervals; pooled metrics retained for comparison.",
+  "cluster_bootstrap_metrics": [
+    "rmse",
+    "mae",
+    "r2"
+  ],
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260806,
+  "target_rule": "Originally native-valid cells at artificially masked positions; wells with zero targets for a curve/rate are excluded from that group.",
+  "runs": [
+    {
+      "model": "covariance",
+      "per_well_path": "external_results/R2-M3_EspiritoSanto_FourCurves_PCC_Covariance/external_es_metrics_by_well.csv",
+      "pooled_path": "external_results/R2-M3_EspiritoSanto_FourCurves_PCC_Covariance/external_es_summary.csv",
+      "source_wells": 130
+    },
+    {
+      "model": "cGAN",
+      "per_well_path": "external_results/R2-M3_EspiritoSanto_FourCurves_cGAN/external_es_metrics_by_well.csv",
+      "pooled_path": "external_results/R2-M3_EspiritoSanto_FourCurves_cGAN/external_es_summary.csv",
+      "source_wells": 130
+    }
+  ]
+}

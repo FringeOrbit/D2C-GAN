@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+*.pth
+*.pkl
+*.pt
+*.ckpt
+data/
+raw_data/
+predictions/
+*.csv.tmp
+.DS_Store

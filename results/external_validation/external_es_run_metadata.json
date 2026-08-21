@@ -1,0 +1,1327 @@
+{
+  "source": "Comprehensive well-log and geochemical data set of the Espirito Santo Basin, SE Brazil",
+  "data_file": "/home/chenjy/data1/l20cxw/code/cgan_1/data/external_espirito_santo/full_df.csv",
+  "checkpoint": "/home/chenjy/data1/l20cxw/code/cgan_1/ablation_checkpoints/Ours_Full/best_model.pth",
+  "scaler": "/home/chenjy/data1/l20cxw/code/cgan_1/ablation_checkpoints/Ours_Full/std_scaler.pkl",
+  "model_variant": "covariance-matching-original",
+  "curve_mapping": {
+    "GR": "GR",
+    "DT": "DTC",
+    "RHOB": "RHOB",
+    "NPHI_percent": "NPHI_fraction",
+    "Location": "onshore/offshore stratification"
+  },
+  "source_rows": 1419513,
+  "source_wells": 130,
+  "sort_order": "ascending depth within each well",
+  "missing_rates": [
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "seed": 20260804,
+  "wells": [
+    {
+      "well": "1",
+      "rows": 14001,
+      "depth_min": 0.0,
+      "depth_max": 2800.0,
+      "valid_gr": 8053,
+      "valid_rhob": 2472,
+      "valid_nphi": 0,
+      "valid_dtc": 5648
+    },
+    {
+      "well": "10",
+      "rows": 5971,
+      "depth_min": 341.0,
+      "depth_max": 1535.0,
+      "valid_gr": 589,
+      "valid_rhob": 841,
+      "valid_nphi": 722,
+      "valid_dtc": 0
+    },
+    {
+      "well": "100",
+      "rows": 10177,
+      "depth_min": 0.0,
+      "depth_max": 2035.2,
+      "valid_gr": 9136,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 6170
+    },
+    {
+      "well": "101",
+      "rows": 4692,
+      "depth_min": 305.0,
+      "depth_max": 1242.0,
+      "valid_gr": 4583,
+      "valid_rhob": 2710,
+      "valid_nphi": 2575,
+      "valid_dtc": 4635
+    },
+    {
+      "well": "102",
+      "rows": 6089,
+      "depth_min": 0.0,
+      "depth_max": 1217.6,
+      "valid_gr": 4325,
+      "valid_rhob": 2300,
+      "valid_nphi": 2066,
+      "valid_dtc": 4615
+    },
+    {
+      "well": "103",
+      "rows": 15812,
+      "depth_min": 2425.0,
+      "depth_max": 5587.2,
+      "valid_gr": 15606,
+      "valid_rhob": 14889,
+      "valid_nphi": 13946,
+      "valid_dtc": 15461
+    },
+    {
+      "well": "104",
+      "rows": 18305,
+      "depth_min": 1537.0,
+      "depth_max": 5197.8,
+      "valid_gr": 13809,
+      "valid_rhob": 13307,
+      "valid_nphi": 13116,
+      "valid_dtc": 17768
+    },
+    {
+      "well": "105",
+      "rows": 8693,
+      "depth_min": 8.4,
+      "depth_max": 1746.8,
+      "valid_gr": 8576,
+      "valid_rhob": 6686,
+      "valid_nphi": 6376,
+      "valid_dtc": 6694
+    },
+    {
+      "well": "106",
+      "rows": 7636,
+      "depth_min": 690.2,
+      "depth_max": 2217.2,
+      "valid_gr": 6724,
+      "valid_rhob": 2884,
+      "valid_nphi": 2858,
+      "valid_dtc": 6169
+    },
+    {
+      "well": "107",
+      "rows": 10075,
+      "depth_min": 0.0,
+      "depth_max": 2014.8,
+      "valid_gr": 5786,
+      "valid_rhob": 1727,
+      "valid_nphi": 1729,
+      "valid_dtc": 5286
+    },
+    {
+      "well": "108",
+      "rows": 6542,
+      "depth_min": 699.0,
+      "depth_max": 2007.2,
+      "valid_gr": 3601,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 2958
+    },
+    {
+      "well": "109",
+      "rows": 7009,
+      "depth_min": 626.0,
+      "depth_max": 2027.6,
+      "valid_gr": 6805,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 5774
+    },
+    {
+      "well": "11",
+      "rows": 10356,
+      "depth_min": 305.0,
+      "depth_max": 2375.0,
+      "valid_gr": 10197,
+      "valid_rhob": 2627,
+      "valid_nphi": 2072,
+      "valid_dtc": 0
+    },
+    {
+      "well": "110",
+      "rows": 4011,
+      "depth_min": 1124.0,
+      "depth_max": 1926.0,
+      "valid_gr": 3950,
+      "valid_rhob": 1597,
+      "valid_nphi": 1497,
+      "valid_dtc": 3736
+    },
+    {
+      "well": "111",
+      "rows": 5564,
+      "depth_min": 969.2,
+      "depth_max": 2081.8,
+      "valid_gr": 5532,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 5339
+    },
+    {
+      "well": "112",
+      "rows": 5511,
+      "depth_min": 794.0,
+      "depth_max": 1896.0,
+      "valid_gr": 5339,
+      "valid_rhob": 2750,
+      "valid_nphi": 2557,
+      "valid_dtc": 4771
+    },
+    {
+      "well": "113",
+      "rows": 9166,
+      "depth_min": 0.0,
+      "depth_max": 1833.0,
+      "valid_gr": 7112,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 8990
+    },
+    {
+      "well": "114",
+      "rows": 13723,
+      "depth_min": 0.0,
+      "depth_max": 2744.4,
+      "valid_gr": 12181,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 12103
+    },
+    {
+      "well": "115",
+      "rows": 14002,
+      "depth_min": 0.0,
+      "depth_max": 2800.2,
+      "valid_gr": 12532,
+      "valid_rhob": 6822,
+      "valid_nphi": 1125,
+      "valid_dtc": 12431
+    },
+    {
+      "well": "116",
+      "rows": 14650,
+      "depth_min": 0.0,
+      "depth_max": 2929.8,
+      "valid_gr": 9194,
+      "valid_rhob": 2587,
+      "valid_nphi": 2571,
+      "valid_dtc": 8974
+    },
+    {
+      "well": "117",
+      "rows": 8435,
+      "depth_min": 1114.8,
+      "depth_max": 2801.6,
+      "valid_gr": 8350,
+      "valid_rhob": 0,
+      "valid_nphi": 8433,
+      "valid_dtc": 8392
+    },
+    {
+      "well": "118",
+      "rows": 18992,
+      "depth_min": 860.98,
+      "depth_max": 4658.98,
+      "valid_gr": 18625,
+      "valid_rhob": 11787,
+      "valid_nphi": 0,
+      "valid_dtc": 6753
+    },
+    {
+      "well": "119",
+      "rows": 12292,
+      "depth_min": 206.0,
+      "depth_max": 2664.2,
+      "valid_gr": 8067,
+      "valid_rhob": 1346,
+      "valid_nphi": 1319,
+      "valid_dtc": 0
+    },
+    {
+      "well": "12",
+      "rows": 4201,
+      "depth_min": 665.0,
+      "depth_max": 1505.0,
+      "valid_gr": 3381,
+      "valid_rhob": 1544,
+      "valid_nphi": 1125,
+      "valid_dtc": 3695
+    },
+    {
+      "well": "120",
+      "rows": 6270,
+      "depth_min": 705.0,
+      "depth_max": 1958.8,
+      "valid_gr": 5650,
+      "valid_rhob": 1734,
+      "valid_nphi": 1734,
+      "valid_dtc": 0
+    },
+    {
+      "well": "121",
+      "rows": 4376,
+      "depth_min": 1074.0,
+      "depth_max": 1949.0,
+      "valid_gr": 4280,
+      "valid_rhob": 1240,
+      "valid_nphi": 1206,
+      "valid_dtc": 0
+    },
+    {
+      "well": "122",
+      "rows": 7673,
+      "depth_min": 116.4,
+      "depth_max": 1650.8,
+      "valid_gr": 3185,
+      "valid_rhob": 3185,
+      "valid_nphi": 3028,
+      "valid_dtc": 3185
+    },
+    {
+      "well": "123",
+      "rows": 4591,
+      "depth_min": 745.0,
+      "depth_max": 1662.8,
+      "valid_gr": 4567,
+      "valid_rhob": 4461,
+      "valid_nphi": 3259,
+      "valid_dtc": 4453
+    },
+    {
+      "well": "124",
+      "rows": 5214,
+      "depth_min": 870.4,
+      "depth_max": 1913.0,
+      "valid_gr": 5159,
+      "valid_rhob": 3050,
+      "valid_nphi": 2602,
+      "valid_dtc": 4976
+    },
+    {
+      "well": "125",
+      "rows": 2477,
+      "depth_min": 892.4,
+      "depth_max": 1385.6,
+      "valid_gr": 2443,
+      "valid_rhob": 1182,
+      "valid_nphi": 1160,
+      "valid_dtc": 0
+    },
+    {
+      "well": "126",
+      "rows": 5136,
+      "depth_min": 282.4,
+      "depth_max": 1309.4,
+      "valid_gr": 4728,
+      "valid_rhob": 1385,
+      "valid_nphi": 1209,
+      "valid_dtc": 5001
+    },
+    {
+      "well": "127",
+      "rows": 6241,
+      "depth_min": 381.0,
+      "depth_max": 1629.0,
+      "valid_gr": 1849,
+      "valid_rhob": 2137,
+      "valid_nphi": 1965,
+      "valid_dtc": 2098
+    },
+    {
+      "well": "128",
+      "rows": 3786,
+      "depth_min": 10.0,
+      "depth_max": 767.0,
+      "valid_gr": 3301,
+      "valid_rhob": 1061,
+      "valid_nphi": 945,
+      "valid_dtc": 0
+    },
+    {
+      "well": "129",
+      "rows": 8022,
+      "depth_min": 0.0,
+      "depth_max": 1604.0,
+      "valid_gr": 6831,
+      "valid_rhob": 2172,
+      "valid_nphi": 1410,
+      "valid_dtc": 0
+    },
+    {
+      "well": "13",
+      "rows": 13456,
+      "depth_min": 403.0,
+      "depth_max": 3094.0,
+      "valid_gr": 11947,
+      "valid_rhob": 4969,
+      "valid_nphi": 1164,
+      "valid_dtc": 11585
+    },
+    {
+      "well": "130",
+      "rows": 7344,
+      "depth_min": 0.8,
+      "depth_max": 1469.4,
+      "valid_gr": 5984,
+      "valid_rhob": 5333,
+      "valid_nphi": 4607,
+      "valid_dtc": 0
+    },
+    {
+      "well": "14",
+      "rows": 23482,
+      "depth_min": 120.0,
+      "depth_max": 4816.2,
+      "valid_gr": 22315,
+      "valid_rhob": 3747,
+      "valid_nphi": 3722,
+      "valid_dtc": 21754
+    },
+    {
+      "well": "15",
+      "rows": 12481,
+      "depth_min": 405.0,
+      "depth_max": 2901.0,
+      "valid_gr": 11891,
+      "valid_rhob": 2161,
+      "valid_nphi": 0,
+      "valid_dtc": 12481
+    },
+    {
+      "well": "16",
+      "rows": 16910,
+      "depth_min": 503.0,
+      "depth_max": 3884.8,
+      "valid_gr": 15944,
+      "valid_rhob": 2497,
+      "valid_nphi": 2443,
+      "valid_dtc": 16061
+    },
+    {
+      "well": "17",
+      "rows": 16042,
+      "depth_min": 501.4,
+      "depth_max": 3709.6,
+      "valid_gr": 15935,
+      "valid_rhob": 9644,
+      "valid_nphi": 0,
+      "valid_dtc": 15990
+    },
+    {
+      "well": "18",
+      "rows": 23773,
+      "depth_min": 490.2,
+      "depth_max": 5244.6,
+      "valid_gr": 23730,
+      "valid_rhob": 23363,
+      "valid_nphi": 6612,
+      "valid_dtc": 23701
+    },
+    {
+      "well": "19",
+      "rows": 17013,
+      "depth_min": 438.0,
+      "depth_max": 3840.4,
+      "valid_gr": 16960,
+      "valid_rhob": 11650,
+      "valid_nphi": 4095,
+      "valid_dtc": 11734
+    },
+    {
+      "well": "2",
+      "rows": 13016,
+      "depth_min": 210.0,
+      "depth_max": 2813.0,
+      "valid_gr": 12962,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "20",
+      "rows": 14249,
+      "depth_min": 1100.0,
+      "depth_max": 3949.6,
+      "valid_gr": 13976,
+      "valid_rhob": 13535,
+      "valid_nphi": 7072,
+      "valid_dtc": 14065
+    },
+    {
+      "well": "21",
+      "rows": 15532,
+      "depth_min": 397.8,
+      "depth_max": 3504.0,
+      "valid_gr": 15245,
+      "valid_rhob": 11597,
+      "valid_nphi": 6101,
+      "valid_dtc": 11559
+    },
+    {
+      "well": "22",
+      "rows": 16595,
+      "depth_min": 531.11,
+      "depth_max": 3849.91,
+      "valid_gr": 16540,
+      "valid_rhob": 11596,
+      "valid_nphi": 6205,
+      "valid_dtc": 16439
+    },
+    {
+      "well": "23",
+      "rows": 24755,
+      "depth_min": 455.2,
+      "depth_max": 5403.4,
+      "valid_gr": 24210,
+      "valid_rhob": 16979,
+      "valid_nphi": 16622,
+      "valid_dtc": 24715
+    },
+    {
+      "well": "24",
+      "rows": 22534,
+      "depth_min": 499.2,
+      "depth_max": 5005.8,
+      "valid_gr": 21463,
+      "valid_rhob": 17658,
+      "valid_nphi": 8199,
+      "valid_dtc": 22405
+    },
+    {
+      "well": "25",
+      "rows": 17629,
+      "depth_min": 492.2,
+      "depth_max": 4017.8,
+      "valid_gr": 17473,
+      "valid_rhob": 12670,
+      "valid_nphi": 7543,
+      "valid_dtc": 17537
+    },
+    {
+      "well": "26",
+      "rows": 14389,
+      "depth_min": 593.2,
+      "depth_max": 3470.8,
+      "valid_gr": 14286,
+      "valid_rhob": 4202,
+      "valid_nphi": 4096,
+      "valid_dtc": 14322
+    },
+    {
+      "well": "27",
+      "rows": 18239,
+      "depth_min": 603.0,
+      "depth_max": 4250.6,
+      "valid_gr": 17790,
+      "valid_rhob": 3744,
+      "valid_nphi": 3712,
+      "valid_dtc": 18128
+    },
+    {
+      "well": "28",
+      "rows": 13194,
+      "depth_min": 321.2,
+      "depth_max": 2959.8,
+      "valid_gr": 13153,
+      "valid_rhob": 1957,
+      "valid_nphi": 1917,
+      "valid_dtc": 13138
+    },
+    {
+      "well": "29",
+      "rows": 15692,
+      "depth_min": 490.4,
+      "depth_max": 3628.6,
+      "valid_gr": 14921,
+      "valid_rhob": 9303,
+      "valid_nphi": 9146,
+      "valid_dtc": 15598
+    },
+    {
+      "well": "3",
+      "rows": 14948,
+      "depth_min": 390.77,
+      "depth_max": 3380.17,
+      "valid_gr": 13817,
+      "valid_rhob": 5618,
+      "valid_nphi": 5515,
+      "valid_dtc": 14893
+    },
+    {
+      "well": "30",
+      "rows": 17628,
+      "depth_min": 1880.6,
+      "depth_max": 5406.0,
+      "valid_gr": 17509,
+      "valid_rhob": 14849,
+      "valid_nphi": 14485,
+      "valid_dtc": 14956
+    },
+    {
+      "well": "31",
+      "rows": 14632,
+      "depth_min": 2119.9,
+      "depth_max": 5046.1,
+      "valid_gr": 13797,
+      "valid_rhob": 9522,
+      "valid_nphi": 9049,
+      "valid_dtc": 14215
+    },
+    {
+      "well": "32",
+      "rows": 21756,
+      "depth_min": 2062.5,
+      "depth_max": 6413.5,
+      "valid_gr": 20976,
+      "valid_rhob": 19386,
+      "valid_nphi": 18410,
+      "valid_dtc": 19501
+    },
+    {
+      "well": "33",
+      "rows": 3731,
+      "depth_min": 406.0,
+      "depth_max": 1152.0,
+      "valid_gr": 3635,
+      "valid_rhob": 3077,
+      "valid_nphi": 2192,
+      "valid_dtc": 3657
+    },
+    {
+      "well": "34",
+      "rows": 2896,
+      "depth_min": 499.0,
+      "depth_max": 1078.0,
+      "valid_gr": 2807,
+      "valid_rhob": 1097,
+      "valid_nphi": 561,
+      "valid_dtc": 2888
+    },
+    {
+      "well": "35",
+      "rows": 8483,
+      "depth_min": 937.0,
+      "depth_max": 2633.0,
+      "valid_gr": 8280,
+      "valid_rhob": 1194,
+      "valid_nphi": 1130,
+      "valid_dtc": 8416
+    },
+    {
+      "well": "36",
+      "rows": 13516,
+      "depth_min": 0.0,
+      "depth_max": 2703.0,
+      "valid_gr": 12232,
+      "valid_rhob": 3043,
+      "valid_nphi": 2987,
+      "valid_dtc": 13263
+    },
+    {
+      "well": "37",
+      "rows": 9601,
+      "depth_min": 294.0,
+      "depth_max": 2214.0,
+      "valid_gr": 4500,
+      "valid_rhob": 5196,
+      "valid_nphi": 2977,
+      "valid_dtc": 9596
+    },
+    {
+      "well": "38",
+      "rows": 5142,
+      "depth_min": 1265.0,
+      "depth_max": 2293.0,
+      "valid_gr": 5047,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 5087
+    },
+    {
+      "well": "39",
+      "rows": 10511,
+      "depth_min": 300.0,
+      "depth_max": 2401.8,
+      "valid_gr": 3162,
+      "valid_rhob": 3326,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "4",
+      "rows": 12440,
+      "depth_min": 430.2,
+      "depth_max": 2918.0,
+      "valid_gr": 11836,
+      "valid_rhob": 6341,
+      "valid_nphi": 6319,
+      "valid_dtc": 12096
+    },
+    {
+      "well": "40",
+      "rows": 11643,
+      "depth_min": 19.5,
+      "depth_max": 2347.9,
+      "valid_gr": 11552,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 11537
+    },
+    {
+      "well": "41",
+      "rows": 10046,
+      "depth_min": 0.0,
+      "depth_max": 2009.0,
+      "valid_gr": 8475,
+      "valid_rhob": 675,
+      "valid_nphi": 976,
+      "valid_dtc": 8546
+    },
+    {
+      "well": "42",
+      "rows": 7323,
+      "depth_min": 425.5,
+      "depth_max": 1889.9,
+      "valid_gr": 7287,
+      "valid_rhob": 0,
+      "valid_nphi": 7255,
+      "valid_dtc": 7255
+    },
+    {
+      "well": "43",
+      "rows": 14603,
+      "depth_min": 0.0,
+      "depth_max": 2920.0,
+      "valid_gr": 13064,
+      "valid_rhob": 7931,
+      "valid_nphi": 7722,
+      "valid_dtc": 13046
+    },
+    {
+      "well": "44",
+      "rows": 4022,
+      "depth_min": 1157.0,
+      "depth_max": 1961.0,
+      "valid_gr": 3959,
+      "valid_rhob": 1547,
+      "valid_nphi": 1511,
+      "valid_dtc": 3747
+    },
+    {
+      "well": "45",
+      "rows": 11637,
+      "depth_min": 20.0,
+      "depth_max": 2347.2,
+      "valid_gr": 11515,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 11477
+    },
+    {
+      "well": "46",
+      "rows": 9051,
+      "depth_min": 1048.0,
+      "depth_max": 2858.0,
+      "valid_gr": 8982,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 9009
+    },
+    {
+      "well": "47",
+      "rows": 9541,
+      "depth_min": 855.0,
+      "depth_max": 2763.0,
+      "valid_gr": 8871,
+      "valid_rhob": 3041,
+      "valid_nphi": 3030,
+      "valid_dtc": 9034
+    },
+    {
+      "well": "48",
+      "rows": 11051,
+      "depth_min": 18.0,
+      "depth_max": 2228.0,
+      "valid_gr": 10781,
+      "valid_rhob": 5666,
+      "valid_nphi": 5071,
+      "valid_dtc": 10937
+    },
+    {
+      "well": "49",
+      "rows": 9501,
+      "depth_min": 0.0,
+      "depth_max": 1900.0,
+      "valid_gr": 7987,
+      "valid_rhob": 5216,
+      "valid_nphi": 0,
+      "valid_dtc": 5199
+    },
+    {
+      "well": "5",
+      "rows": 12201,
+      "depth_min": 160.0,
+      "depth_max": 2600.0,
+      "valid_gr": 2581,
+      "valid_rhob": 2849,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "50",
+      "rows": 8641,
+      "depth_min": 286.0,
+      "depth_max": 2014.0,
+      "valid_gr": 6758,
+      "valid_rhob": 5491,
+      "valid_nphi": 5469,
+      "valid_dtc": 5474
+    },
+    {
+      "well": "51",
+      "rows": 12571,
+      "depth_min": 749.0,
+      "depth_max": 3263.0,
+      "valid_gr": 10897,
+      "valid_rhob": 8262,
+      "valid_nphi": 8151,
+      "valid_dtc": 11441
+    },
+    {
+      "well": "52",
+      "rows": 11570,
+      "depth_min": 730.0,
+      "depth_max": 3043.8,
+      "valid_gr": 10930,
+      "valid_rhob": 7013,
+      "valid_nphi": 6944,
+      "valid_dtc": 7004
+    },
+    {
+      "well": "53",
+      "rows": 10372,
+      "depth_min": 978.4,
+      "depth_max": 3052.0,
+      "valid_gr": 9949,
+      "valid_rhob": 3752,
+      "valid_nphi": 3749,
+      "valid_dtc": 10203
+    },
+    {
+      "well": "54",
+      "rows": 18544,
+      "depth_min": 357.0,
+      "depth_max": 4065.0,
+      "valid_gr": 16100,
+      "valid_rhob": 2047,
+      "valid_nphi": 0,
+      "valid_dtc": 18523
+    },
+    {
+      "well": "55",
+      "rows": 8681,
+      "depth_min": 886.0,
+      "depth_max": 2622.0,
+      "valid_gr": 6948,
+      "valid_rhob": 3962,
+      "valid_nphi": 3934,
+      "valid_dtc": 7133
+    },
+    {
+      "well": "56",
+      "rows": 11884,
+      "depth_min": 17.8,
+      "depth_max": 2394.4,
+      "valid_gr": 11401,
+      "valid_rhob": 7192,
+      "valid_nphi": 7070,
+      "valid_dtc": 7172
+    },
+    {
+      "well": "57",
+      "rows": 4425,
+      "depth_min": 598.2,
+      "depth_max": 1483.0,
+      "valid_gr": 3432,
+      "valid_rhob": 811,
+      "valid_nphi": 775,
+      "valid_dtc": 3306
+    },
+    {
+      "well": "58",
+      "rows": 15972,
+      "depth_min": 10.2,
+      "depth_max": 3204.0,
+      "valid_gr": 15668,
+      "valid_rhob": 2810,
+      "valid_nphi": 2783,
+      "valid_dtc": 15853
+    },
+    {
+      "well": "59",
+      "rows": 4082,
+      "depth_min": 773.8,
+      "depth_max": 1590.0,
+      "valid_gr": 3998,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 3847
+    },
+    {
+      "well": "6",
+      "rows": 7516,
+      "depth_min": 948.0,
+      "depth_max": 2451.0,
+      "valid_gr": 7268,
+      "valid_rhob": 1204,
+      "valid_nphi": 2270,
+      "valid_dtc": 5281
+    },
+    {
+      "well": "60",
+      "rows": 12099,
+      "depth_min": 137.0,
+      "depth_max": 2556.6,
+      "valid_gr": 12068,
+      "valid_rhob": 6835,
+      "valid_nphi": 1860,
+      "valid_dtc": 11948
+    },
+    {
+      "well": "61",
+      "rows": 9151,
+      "depth_min": 300.0,
+      "depth_max": 2130.0,
+      "valid_gr": 9130,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "62",
+      "rows": 2956,
+      "depth_min": 924.0,
+      "depth_max": 1515.0,
+      "valid_gr": 2813,
+      "valid_rhob": 2042,
+      "valid_nphi": 880,
+      "valid_dtc": 2885
+    },
+    {
+      "well": "63",
+      "rows": 11308,
+      "depth_min": 0.0,
+      "depth_max": 2261.2,
+      "valid_gr": 6575,
+      "valid_rhob": 5486,
+      "valid_nphi": 5456,
+      "valid_dtc": 6035
+    },
+    {
+      "well": "64",
+      "rows": 15037,
+      "depth_min": 205.0,
+      "depth_max": 3212.2,
+      "valid_gr": 14953,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 15026
+    },
+    {
+      "well": "65",
+      "rows": 14999,
+      "depth_min": 0.0,
+      "depth_max": 2999.6,
+      "valid_gr": 12916,
+      "valid_rhob": 8761,
+      "valid_nphi": 8574,
+      "valid_dtc": 13168
+    },
+    {
+      "well": "66",
+      "rows": 14302,
+      "depth_min": 0.0,
+      "depth_max": 2860.2,
+      "valid_gr": 8578,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 8566
+    },
+    {
+      "well": "67",
+      "rows": 12623,
+      "depth_min": 201.0,
+      "depth_max": 2725.4,
+      "valid_gr": 12535,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 12591
+    },
+    {
+      "well": "68",
+      "rows": 17022,
+      "depth_min": 147.0,
+      "depth_max": 3551.0,
+      "valid_gr": 16798,
+      "valid_rhob": 4189,
+      "valid_nphi": 618,
+      "valid_dtc": 16926
+    },
+    {
+      "well": "69",
+      "rows": 14649,
+      "depth_min": 296.4,
+      "depth_max": 3226.0,
+      "valid_gr": 14419,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 14631
+    },
+    {
+      "well": "7",
+      "rows": 9101,
+      "depth_min": 991.0,
+      "depth_max": 2811.0,
+      "valid_gr": 8925,
+      "valid_rhob": 2148,
+      "valid_nphi": 5247,
+      "valid_dtc": 6801
+    },
+    {
+      "well": "70",
+      "rows": 5753,
+      "depth_min": 32.0,
+      "depth_max": 1182.4,
+      "valid_gr": 5672,
+      "valid_rhob": 5698,
+      "valid_nphi": 0,
+      "valid_dtc": 5710
+    },
+    {
+      "well": "71",
+      "rows": 13361,
+      "depth_min": 153.0,
+      "depth_max": 2824.0,
+      "valid_gr": 12856,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "72",
+      "rows": 5792,
+      "depth_min": 25.8,
+      "depth_max": 1184.0,
+      "valid_gr": 5719,
+      "valid_rhob": 4674,
+      "valid_nphi": 3757,
+      "valid_dtc": 4658
+    },
+    {
+      "well": "73",
+      "rows": 14151,
+      "depth_min": 295.0,
+      "depth_max": 3125.0,
+      "valid_gr": 14116,
+      "valid_rhob": 0,
+      "valid_nphi": 0,
+      "valid_dtc": 14151
+    },
+    {
+      "well": "74",
+      "rows": 7103,
+      "depth_min": 815.6,
+      "depth_max": 2236.0,
+      "valid_gr": 6988,
+      "valid_rhob": 1624,
+      "valid_nphi": 1593,
+      "valid_dtc": 6639
+    },
+    {
+      "well": "75",
+      "rows": 13317,
+      "depth_min": 0.0,
+      "depth_max": 2663.0,
+      "valid_gr": 13108,
+      "valid_rhob": 7001,
+      "valid_nphi": 4382,
+      "valid_dtc": 6946
+    },
+    {
+      "well": "76",
+      "rows": 14006,
+      "depth_min": 195.0,
+      "depth_max": 2996.0,
+      "valid_gr": 13923,
+      "valid_rhob": 3583,
+      "valid_nphi": 0,
+      "valid_dtc": 13917
+    },
+    {
+      "well": "77",
+      "rows": 19319,
+      "depth_min": 0.0,
+      "depth_max": 2944.0632,
+      "valid_gr": 17126,
+      "valid_rhob": 10022,
+      "valid_nphi": 6781,
+      "valid_dtc": 10350
+    },
+    {
+      "well": "78",
+      "rows": 12755,
+      "depth_min": 151.0,
+      "depth_max": 2701.8,
+      "valid_gr": 12704,
+      "valid_rhob": 7654,
+      "valid_nphi": 3250,
+      "valid_dtc": 7612
+    },
+    {
+      "well": "79",
+      "rows": 12881,
+      "depth_min": 0.0,
+      "depth_max": 2576.0,
+      "valid_gr": 12046,
+      "valid_rhob": 3126,
+      "valid_nphi": 3078,
+      "valid_dtc": 7220
+    },
+    {
+      "well": "8",
+      "rows": 12649,
+      "depth_min": 15.0,
+      "depth_max": 2544.6,
+      "valid_gr": 12610,
+      "valid_rhob": 1853,
+      "valid_nphi": 5962,
+      "valid_dtc": 12645
+    },
+    {
+      "well": "80",
+      "rows": 4951,
+      "depth_min": 390.0,
+      "depth_max": 1380.0,
+      "valid_gr": 4516,
+      "valid_rhob": 1355,
+      "valid_nphi": 1248,
+      "valid_dtc": 4944
+    },
+    {
+      "well": "81",
+      "rows": 4751,
+      "depth_min": 386.0,
+      "depth_max": 1336.0,
+      "valid_gr": 4307,
+      "valid_rhob": 1201,
+      "valid_nphi": 1021,
+      "valid_dtc": 4625
+    },
+    {
+      "well": "82",
+      "rows": 5395,
+      "depth_min": 282.9,
+      "depth_max": 1361.7,
+      "valid_gr": 5063,
+      "valid_rhob": 4296,
+      "valid_nphi": 4280,
+      "valid_dtc": 5366
+    },
+    {
+      "well": "83",
+      "rows": 4473,
+      "depth_min": 197.0,
+      "depth_max": 1091.4,
+      "valid_gr": 4118,
+      "valid_rhob": 2946,
+      "valid_nphi": 2915,
+      "valid_dtc": 4466
+    },
+    {
+      "well": "84",
+      "rows": 12581,
+      "depth_min": 0.0,
+      "depth_max": 2516.0,
+      "valid_gr": 11663,
+      "valid_rhob": 4494,
+      "valid_nphi": 4492,
+      "valid_dtc": 12508
+    },
+    {
+      "well": "85",
+      "rows": 6342,
+      "depth_min": 245.0,
+      "depth_max": 1513.2,
+      "valid_gr": 6104,
+      "valid_rhob": 6330,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "86",
+      "rows": 5720,
+      "depth_min": 782.0,
+      "depth_max": 1925.8,
+      "valid_gr": 5554,
+      "valid_rhob": 4468,
+      "valid_nphi": 4423,
+      "valid_dtc": 5648
+    },
+    {
+      "well": "87",
+      "rows": 13810,
+      "depth_min": 370.0,
+      "depth_max": 3131.0,
+      "valid_gr": 13052,
+      "valid_rhob": 13789,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "88",
+      "rows": 16086,
+      "depth_min": 320.0,
+      "depth_max": 3537.0,
+      "valid_gr": 15733,
+      "valid_rhob": 11754,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "89",
+      "rows": 13508,
+      "depth_min": 172.6,
+      "depth_max": 2874.0,
+      "valid_gr": 13350,
+      "valid_rhob": 2737,
+      "valid_nphi": 6019,
+      "valid_dtc": 13278
+    },
+    {
+      "well": "9",
+      "rows": 7508,
+      "depth_min": 315.0,
+      "depth_max": 1816.4,
+      "valid_gr": 5654,
+      "valid_rhob": 5707,
+      "valid_nphi": 5597,
+      "valid_dtc": 7506
+    },
+    {
+      "well": "90",
+      "rows": 11365,
+      "depth_min": 2425.0,
+      "depth_max": 4697.8,
+      "valid_gr": 11218,
+      "valid_rhob": 10988,
+      "valid_nphi": 10971,
+      "valid_dtc": 11245
+    },
+    {
+      "well": "91",
+      "rows": 10596,
+      "depth_min": 47.0,
+      "depth_max": 2166.0,
+      "valid_gr": 10415,
+      "valid_rhob": 5895,
+      "valid_nphi": 5843,
+      "valid_dtc": 5799
+    },
+    {
+      "well": "92",
+      "rows": 5839,
+      "depth_min": 26.8,
+      "depth_max": 1194.4,
+      "valid_gr": 5756,
+      "valid_rhob": 0,
+      "valid_nphi": 4601,
+      "valid_dtc": 5837
+    },
+    {
+      "well": "93",
+      "rows": 9486,
+      "depth_min": 305.0,
+      "depth_max": 2202.0,
+      "valid_gr": 500,
+      "valid_rhob": 500,
+      "valid_nphi": 0,
+      "valid_dtc": 0
+    },
+    {
+      "well": "94",
+      "rows": 8543,
+      "depth_min": 9.6,
+      "depth_max": 1718.0,
+      "valid_gr": 8491,
+      "valid_rhob": 6567,
+      "valid_nphi": 6456,
+      "valid_dtc": 6529
+    },
+    {
+      "well": "95",
+      "rows": 11052,
+      "depth_min": 0.0,
+      "depth_max": 2210.2,
+      "valid_gr": 9777,
+      "valid_rhob": 2803,
+      "valid_nphi": 2784,
+      "valid_dtc": 9706
+    },
+    {
+      "well": "96",
+      "rows": 8591,
+      "depth_min": 0.0,
+      "depth_max": 1718.0,
+      "valid_gr": 7568,
+      "valid_rhob": 4007,
+      "valid_nphi": 2500,
+      "valid_dtc": 7552
+    },
+    {
+      "well": "97",
+      "rows": 11759,
+      "depth_min": 0.0,
+      "depth_max": 2351.6,
+      "valid_gr": 10183,
+      "valid_rhob": 6849,
+      "valid_nphi": 6541,
+      "valid_dtc": 10188
+    },
+    {
+      "well": "98",
+      "rows": 10604,
+      "depth_min": 0.0,
+      "depth_max": 2120.6,
+      "valid_gr": 10388,
+      "valid_rhob": 753,
+      "valid_nphi": 748,
+      "valid_dtc": 10364
+    },
+    {
+      "well": "99",
+      "rows": 6042,
+      "depth_min": 0.0,
+      "depth_max": 1208.2,
+      "valid_gr": 4081,
+      "valid_rhob": 1378,
+      "valid_nphi": 1114,
+      "valid_dtc": 4468
+    }
+  ],
+  "note": "The model and training scaler are frozen. Metrics are computed only on artificially masked, originally valid targets."
+}

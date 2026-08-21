@@ -1,0 +1,62 @@
+{
+  "figure5": {
+    "paired_cells": 63777,
+    "common_four_curve_cells": 38075,
+    "covariance_frobenius": 0.010576690866641517,
+    "covariance_output": "figures/covariance_matrix_pooled",
+    "well_count_joint": 16,
+    "well_count_covariance": 16,
+    "well_covariance_mean": 0.01415420871809911,
+    "well_covariance_ci95": [
+      0.009815674698198365,
+      0.01967925578429953
+    ],
+    "well_truth_r_mean_ci95": [
+      -0.25379015795063514,
+      -0.45826981049994,
+      -0.04274821046288595
+    ],
+    "well_d2cgan_r_mean_ci95": [
+      -0.277303018837478,
+      -0.4801013941288198,
+      -0.0761033487724448
+    ]
+  },
+  "figure7": {
+    "psd_windows_by_curve": {
+      "GR": 1917,
+      "RHOB": 1772,
+      "NPHI": 1251,
+      "DTC": 1632
+    },
+    "frequency_bins": 33,
+    "ci_unit": "well",
+    "bootstrap_replicates": 5000
+  },
+  "metadata": {
+    "dataset": "North Sea / FORCE 2020 test split",
+    "data_path": "/home/chenjy/data1/l20cxw/code/cgan_1/data/beihai/test_processed.csv",
+    "missing_rate": 0.8,
+    "seed": 20260806,
+    "sequence_length": 80,
+    "window_protocol": "non-overlapping windows within each well; final windows edge-padded and excluded after padding",
+    "native_invalid_targets_excluded": true,
+    "well_count": 16,
+    "row_count": 153634,
+    "window_count": 1928,
+    "target_cell_count": 422925,
+    "target_cell_count_by_curve": {
+      "GR": 122881,
+      "RHOB": 114366,
+      "NPHI": 80471,
+      "DTC": 105207
+    },
+    "models": [
+      "D2C-GAN",
+      "Bi-LSTM",
+      "Bi-GRU",
+      "Transformer"
+    ],
+    "checkpoint_root": "/home/chenjy/data1/l20cxw/code/cgan_1/ablation_checkpoints"
+  }
+}
