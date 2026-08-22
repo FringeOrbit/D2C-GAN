@@ -2,6 +2,16 @@
 
 [English](README.md) | 中文
 
+<p align="center">
+  <img src="results/figures/figure_02_model_architecture.png" alt="D2C-GAN 模型架构" width="900">
+</p>
+
+<p align="center"><em>D2C-GAN 测井重建框架概览。</em></p>
+
+| 任务 | 目标曲线 | 缺失率评价 | 主要指标 |
+| --- | --- | --- | --- |
+| 多变量测井曲线重建 | GR、RHOB、NPHI、DTC | 20%、40%、60%、80% | RMSE、MAE、R²、PCC |
+
 ## 项目概述
 
 D2C-GAN 是一个面向多变量缺失测井曲线重建的结构化对抗生成框架。当前实现重建四条常用测井曲线：自然伽马（GR）、体积密度（RHOB）、中子孔隙度（NPHI）和压缩波时差（DTC）。
@@ -74,6 +84,14 @@ data/
 
 输入字段由 `well_column`、`depth_column` 和 `feature_names` 控制。运行训练或评价前，请将本地数据和匹配的标准化文件放到相应路径，或在 `config.py` 中修改路径。当前配置使用长度为 80 的序列窗口，并以 GR、RHOB、NPHI 和 DTC 作为目标曲线。
 
+## 数据获取
+
+用于本地复现的处理后数据包和补充文件存放在以下 Google Drive 文件夹中：
+
+[下载数据包](https://drive.google.com/drive/folders/1XsrKaCukW5QAogkL4Q-tAn4qOZbPgRLZ?usp=drive_link)
+
+如果无法打开链接，请将文件夹共享权限设置为“知道链接的任何人可查看”。原始数据集仍需遵守各自来源的许可和署名要求。
+
 ## 模型训练
 
 准备好本地数据和标准化文件后，执行：
@@ -108,6 +126,25 @@ python evaluate_d2cgan.py
 | 图表生成和诊断记录 | `results/logs/` |
 
 外部验证文件保存的是冻结协方差版本 D2C-GAN 的汇总输出，不包含外部盆地的原始测井文件。
+
+### 代表性结果图
+
+下面展示论文中使用的部分结果图：
+
+<p align="center">
+  <img src="results/figures/figure_04_curve_overlay.png" alt="测井曲线重建示例" width="900">
+</p>
+<p align="center"><em>测井曲线重建示例。</em></p>
+
+<table>
+  <tr>
+    <td align="center"><img src="results/figures/figure_05_crossplot_rhob_nphi.png" alt="RHOB-NPHI 交会图" width="280"><br><sub>跨曲线分布</sub></td>
+    <td align="center"><img src="results/figures/figure_06_covariance_matrix.png" alt="协方差矩阵对比" width="280"><br><sub>协方差诊断</sub></td>
+    <td align="center"><img src="results/figures/figure_07_psd_comparison.png" alt="PSD 频谱对比" width="280"><br><sub>PSD 诊断</sub></td>
+  </tr>
+</table>
+
+图源数据和精简数值汇总与图片一起保存在 [`results/figures/`](results/figures/) 目录中。
 
 ## 引用
 

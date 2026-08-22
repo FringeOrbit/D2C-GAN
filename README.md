@@ -2,6 +2,16 @@
 
 [English](README.md) | [中文](README_zh.md)
 
+<p align="center">
+  <img src="results/figures/figure_02_model_architecture.png" alt="D2C-GAN model architecture" width="900">
+</p>
+
+<p align="center"><em>Overview of the D2C-GAN reconstruction framework.</em></p>
+
+| Task | Target curves | Missing-rate evaluation | Main metrics |
+| --- | --- | --- | --- |
+| Multivariate well-log reconstruction | GR, RHOB, NPHI, DTC | 20%, 40%, 60%, 80% | RMSE, MAE, R², PCC |
+
 ## Overview
 
 D2C-GAN is a structured adversarial framework for reconstructing incomplete
@@ -102,6 +112,17 @@ data and matching standardisation file at the configured paths, or edit the
 paths in `config.py`. The supplied configuration uses an 80-sample sequence
 window and the four target curves listed above.
 
+## Data access
+
+The processed data package and the supplementary files used for local
+reproduction are available from the following Google Drive folder:
+
+[Download the data package](https://drive.google.com/drive/folders/1XsrKaCukW5QAogkL4Q-tAn4qOZbPgRLZ?usp=drive_link)
+
+Access to the folder may require the owner to enable **Anyone with the link**
+permission. The original datasets remain subject to their respective source
+licences and attribution requirements.
+
 ## Training
 
 After preparing the local data and standardisation file, run:
@@ -150,6 +171,26 @@ The result files are organised as follows:
 
 The external-validation files contain summary outputs for the frozen covariance
 version of D2C-GAN. They do not contain the original external well-log files.
+
+### Selected visual results
+
+The following panels show representative outputs included with the manuscript:
+
+<p align="center">
+  <img src="results/figures/figure_04_curve_overlay.png" alt="Reconstructed well-log curves" width="900">
+</p>
+<p align="center"><em>Curve reconstruction example.</em></p>
+
+<table>
+  <tr>
+    <td align="center"><img src="results/figures/figure_05_crossplot_rhob_nphi.png" alt="RHOB-NPHI cross-plot" width="280"><br><sub>Cross-curve distribution</sub></td>
+    <td align="center"><img src="results/figures/figure_06_covariance_matrix.png" alt="Covariance matrix comparison" width="280"><br><sub>Covariance diagnostic</sub></td>
+    <td align="center"><img src="results/figures/figure_07_psd_comparison.png" alt="PSD comparison" width="280"><br><sub>PSD diagnostic</sub></td>
+  </tr>
+</table>
+
+The figure source data and compact numerical summaries are stored alongside
+these images under [`results/figures/`](results/figures/).
 
 ## Citation
 
