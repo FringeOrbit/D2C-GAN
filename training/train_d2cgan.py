@@ -1,5 +1,12 @@
 import os
 import sys
+from pathlib import Path
+
+# Support the documented `python training/train_d2cgan.py` entry point.
+_PROJECT_ROOT = str(Path(__file__).resolve().parents[1])
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
+
 import torch
 import torch.nn as nn
 import numpy as np
@@ -289,6 +296,11 @@ class CGANTrainer:
         self.l1_for_boundary = nn.L1Loss()
 
     def petrophysical_consistency_loss(self, fake, real, missing_mask_float):
+        """Historical pair-overlap matching, not common-four sample covariance.
+
+        Curve-specific means and pairwise counts (+ epsilon) are deliberately
+        retained to match the recovered pre-Wyllie trainer bytecode.
+        """
         if not missing_mask_float.any():
             return torch.tensor(0.0).to(self.device)
 
@@ -427,7 +439,7 @@ def main():
     train_df = pd.read_csv(config.data_path, delimiter=config.processed_delimiter)
 
     # 验证集路径 (如果 config 里没配，就使用默认的 "./data/val_processed.csv")
-    val_path = getattr(config, 'val_data_path', "./data/val_processed.csv")
+    val_path = config.val_path
     print(f"正在加载预处理完成的验证集: {val_path}")
     val_df = pd.read_csv(val_path, delimiter=config.processed_delimiter)
     # =========================================================================

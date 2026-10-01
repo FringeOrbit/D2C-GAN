@@ -1,4 +1,5 @@
 # evaluate_d2cgan.py
+"""Legacy whole-table, pointwise-random evaluator; not a continuous-block protocol."""
 
 import os
 import sys
@@ -18,10 +19,9 @@ from config import OptimizedConfig
 
 # 动态导入生成器类
 AdvancedSeqGenerator = None
-AdvancedSeqGenerator_V2 = None
 
 try:
-    from models.generator import AdvancedSeqGenerator, AdvancedSeqGenerator_V2
+    from models.generator import AdvancedSeqGenerator
 
     print("✅ 成功导入生成器类")
 except ImportError:
@@ -121,32 +121,12 @@ class PaperStyleEvaluator:
         model = generator_class(self.config).to(self.device)
 
         # 加载权重
-        checkpoint = torch.load(model_path, map_location=self.device)
+        from checkpoint_io import load_generator_state
+        state_dict = load_generator_state(model_path, map_location=self.device)
 
         # 兼容不同的保存格式
-        if 'generator' in checkpoint:
-            state_dict = checkpoint['generator']
-            print(f"   从 checkpoint 加载 generator 权重")
-        elif 'model' in checkpoint:
-            state_dict = checkpoint['model']
-            print(f"   从 checkpoint 加载 model 权重")
-        else:
-            state_dict = checkpoint
-            print(f"   直接加载权重")
-
-        # 加载状态字典（带容错）
-        try:
-            model.load_state_dict(state_dict)
-        except Exception as e:
-            print(f"   ⚠️ 加载权重时出错: {e}")
-            # 尝试严格加载
-            missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
-            if missing_keys:
-                print(
-                    f"   缺失的键: {missing_keys[:5]}..." if len(missing_keys) > 5 else f"   缺失的键: {missing_keys}")
-            if unexpected_keys:
-                print(f"   多余的键: {unexpected_keys[:5]}..." if len(
-                    unexpected_keys) > 5 else f"   多余的键: {unexpected_keys}")
+        # Never silently evaluate a partly loaded, incompatible architecture.
+        model.load_state_dict(state_dict, strict=True)
 
         model.eval()
         return model
@@ -545,6 +525,7 @@ class PaperStyleEvaluator:
 
 def main():
     """主函数"""
+    print("Protocol: legacy whole-table reshape + pointwise random missingness; not per-well block testing.")
     config = OptimizedConfig()
 
     # 创建结果目录

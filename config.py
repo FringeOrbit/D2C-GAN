@@ -36,7 +36,7 @@ class OptimizedConfig:
 
     # 训练参数 - 重要调整
     batch_size = 512
-    epochs = 300
+    epochs = 200  # audited server default; not a complete historical run manifest
     # ⚠️ 降低学习率
     learning_rate_g = 0.00005  # 从0.001降低到0.0002
     learning_rate_d = 0.000005  # 从实验 19 的 0.00001 进一步压低
@@ -68,7 +68,7 @@ class OptimizedConfig:
     result_dir = './optimized_results'
 
     # 训练策略 - 新增序列长度
-    seq_len = 80  # 每次输入模型连续 32 个深度点（窗口大小）
+    seq_len = 80  # 80-point windows
     missing_len_range = (25,75) # ⚠️ 新增参数：模拟真实的长段缺失
 
     # 损失权重 - 提取到 config 以便动态修改
@@ -84,5 +84,6 @@ class OptimizedConfig:
     use_dilation = True  # 是否使用空洞卷积扩大感受野
     use_cbam = True  # 是否使用 CBAM 空间-通道注意力
     use_fft = True  # 是否使用频域特征提取模块
+    use_learned_branch_weights = True  # five parallel blocks with two-way Softmax
 
     loss_type = 'huber'  # 可选值: 'huber', 'mse', 'l1'

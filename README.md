@@ -2,11 +2,23 @@
 
 [English](README.md) | [中文](README_zh.md)
 
+## Release correction (2026-10-01)
+
+The default generator now matches the original `Ours_Full` checkpoint layout:
+five parallel time/frequency blocks with learned two-way Softmax fusion.
+The sequential generators from commit `93b2e61` are archived in
+`models/legacy_generator.py`; they are not compatible with these original weights.
+Inputs remain four zero-filled measurement channels (the `mask` argument is
+unused), and training retains the recovered pair-overlap covariance formula.
+Common-four sample covariance is a diagnostic, not the recovered training loss.
+The historical evaluation masks are pointwise random, not continuous blocks.
+See [release provenance and remaining limitations](docs/RELEASE_CORRECTION.md).
+
 <p align="center">
   <img src="results/figures/figure_02_model_architecture.png" alt="D2C-GAN model architecture" width="900">
 </p>
 
-<p align="center"><em>Overview of the D2C-GAN reconstruction framework.</em></p>
+<p align="center"><em>Historical manuscript illustration; implementation details and discrepancies are documented above.</em></p>
 
 | Task | Target curves | Missing-rate evaluation | Main metrics |
 | --- | --- | --- | --- |
@@ -30,12 +42,10 @@ reported analyses.
 
 The implementation follows four complementary design choices:
 
-- A masked-input sequence generator processes the depth-domain signal with
-  dilated residual blocks. The dilation schedule is configurable and is used
-  to capture both local variations and longer depth-range context.
-- Frequency-aware feature blocks transform sequence features into the Fourier
-  domain and return them to the sequence representation, providing an
-  additional description of broad trends and oscillatory structure.
+- A four-channel, zero-filled sequence generator uses five parallel
+  time/frequency blocks, with dilation rates 1, 2, 4, 8 and 16.
+- Each block sends the same input to its residual and Fourier branches,
+  then fuses them with input-dependent two-way Softmax weights.
 - A Patch Hybrid Sequence Discriminator contains separate structure and
   texture streams. It evaluates the reconstructed multivariate sequence and
   the GR texture stream at different levels of detail.
@@ -141,6 +151,28 @@ The same configuration also exposes the frequency block, dilation and CBAM
 switches used for component-wise experiments.
 
 ## Evaluation
+
+`evaluate_d2cgan.py` is retained as a **legacy whole-table, pointwise-random**
+helper. It does not enforce well boundaries and must not be described as a
+continuous-block evaluator. Checkpoint loading is now strict: an incompatible
+state dictionary fails instead of silently leaving parameters uninitialised.
+
+The audited per-well external evaluation is available separately:
+
+```bash
+python evaluation/external_espirito_santo.py --data-file path/to/external.csv --checkpoint path/to/best_model.pth --scaler path/to/std_scaler.pkl --output external_outputs --model-variant covariance-matching-original
+```
+
+It uses non-overlapping 80-point windows within each well, pointwise-random
+masks and pooled RMSE/MAE/R²/PCC. The external CSV schema and unit conversions
+are defined in that script. This port does not regenerate the saved paper tables.
+
+Validate a downloaded original checkpoint and run regression tests with:
+
+```bash
+python scripts/check_checkpoint.py path/to/best_model.pth
+python -m unittest discover -s tests -v
+```
 
 `evaluate_d2cgan.py` loads a generator checkpoint and a fitted scaler,
 then evaluates the four target curves at 20%, 40%, 60% and 80% missing rates.

@@ -2,11 +2,17 @@
 
 [English](README.md) | 中文
 
+## 发布版本修正（2026-10-01）
+
+默认生成器已改为与原 `Ours_Full` 检查点参数结构匹配的版本：五个时频并行块＋学习式二路 Softmax 融合。提交 `93b2e61` 中的串联生成器移至 `models/legacy_generator.py`，不与这批原权重兼容。
+
+输入仍是四通道零填充测量值，`mask` 参数未参与模型计算；训练保留恢复出的“逐曲线均值＋成对重叠计数”协方差公式。共同四曲线样本协方差用于诊断，不是已核实的训练损失。历史测试掩码是逐点随机，并非连续块。详见[版本来源及剩余限制](docs/RELEASE_CORRECTION.md)。
+
 <p align="center">
   <img src="results/figures/figure_02_model_architecture.png" alt="D2C-GAN 模型架构" width="900">
 </p>
 
-<p align="center"><em>D2C-GAN 测井重建框架概览。</em></p>
+<p align="center"><em>历史稿件示意图；实际实现及差异以上述版本说明为准。</em></p>
 
 | 任务 | 目标曲线 | 缺失率评价 | 主要指标 |
 | --- | --- | --- | --- |
@@ -22,8 +28,8 @@ D2C-GAN 是一个面向多变量缺失测井曲线重建的结构化对抗生成
 
 实现主要由以下几个部分组成：
 
-- 掩码输入的序列生成器：使用膨胀残差块处理深度域信号，通过可配置的膨胀率同时捕捉局部变化和更长深度范围内的上下文信息。
-- 频域特征模块：将序列特征变换到傅里叶域并返回序列表示，为整体趋势和周期性结构提供补充信息。
+- 四通道零填充序列生成器：五个时频并行块，膨胀率为 1、2、4、8、16。
+- 每个并行块把同一输入分别送入时域残差分支与傅里叶分支，再用依赖输入的二路 Softmax 权重融合。
 - Patch Hybrid Sequence Discriminator：包含结构流和纹理流，对重建的多变量序列以及 GR 纹理分支进行不同层次的判别。
 - 复合生成器目标：结合点值重建、跨曲线协方差一致性和相邻差分正则化。其中，相邻差分正则化用于匹配边界变化并抑制不必要的局部波动。
 
@@ -105,6 +111,23 @@ python training/train_d2cgan.py
 协方差版本由 `config.py` 中的 `weight_petro` 控制。同一配置文件还提供频域模块、膨胀卷积和 CBAM 开关，可用于组件消融实验。
 
 ## 模型评价
+
+`evaluate_d2cgan.py` 保留为旧的“整表分块＋逐点随机”评价工具，不强制井边界，也不是连续块测试。权重加载已改为严格匹配；不能再用部分加载掩盖模型版本不兼容。
+
+另外加入经核查的按井外部评价入口：
+
+```bash
+python evaluation/external_espirito_santo.py --data-file path/to/external.csv --checkpoint path/to/best_model.pth --scaler path/to/std_scaler.pkl --output external_outputs --model-variant covariance-matching-original
+```
+
+该入口采用井内非重叠 80 点窗口、逐点随机掩码和 pooled RMSE/MAE/R²/PCC。外部 CSV 字段及单位转换以脚本定义为准。此次移植未重算已有论文结果。
+
+检查原权重兼容性、运行回归测试：
+
+```bash
+python scripts/check_checkpoint.py path/to/best_model.pth
+python -m unittest discover -s tests -v
+```
 
 `evaluate_d2cgan.py` 会加载生成器权重和标准化器，在 20%、40%、60% 和 80% 缺失率下评价四条目标曲线。脚本输出每条曲线的 RMSE 和 R²，并可以生成深度曲线可视化。将权重和标准化器放到 `config.py` 指定的位置后执行：
 
